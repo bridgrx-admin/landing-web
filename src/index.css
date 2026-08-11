@@ -1,0 +1,82 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap");
+
+@import "tailwindcss";
+
+:root {
+  font-family: "Poppins", sans-serif;
+  color-scheme: light;
+  --bridgrx-bg: #f7faf8;
+  --bridgrx-ink: #0f172a;
+  --bridgrx-muted: #64748b;
+  --bridgrx-primary: #0f7d5d;
+  --bridgrx-primary-deep: #0b674d;
+  --bridgrx-warm: #f2b84b;
+}
+
+html {
+  scroll-behavior: smooth;
+  background: var(--bridgrx-bg);
+}
+
+body {
+  margin: 0;
+  min-width: 320px;
+  background: var(--bridgrx-bg);
+  color: var(--bridgrx-ink);
+  font-family: "Poppins", sans-serif;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+button,
+input,
+select,
+textarea {
+  font: inherit;
+}
+
+h1,
+h2,
+h3,
+h4 {
+  font-family: "Poppins", sans-serif;
+}
+
+::selection {
+  background: rgba(15, 125, 93, 0.18);
+}
+
+@keyframes marquee-left {
+  from {
+    transform: translateX(0);
+  }
+
+  to {
+    transform: translateX(-50%);
+  }
+}
+
+.marquee-track {
+  animation: marquee-left 28s linear infinite;
+  width: max-content;
+  will-change: transform;
+}
+
+.marquee-mask {
+  mask-image: linear-gradient(
+    to right,
+    transparent 0,
+    black 8%,
+    black 92%,
+    transparent 100%
+  );
+  -webkit-mask-image: linear-gradient(
+    to right,
+    transparent 0,
+    black 8%,
+    black 92%,
+    transparent 100%
+  );
+}
