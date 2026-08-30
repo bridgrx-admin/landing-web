@@ -149,7 +149,7 @@ export function LandingPage() {
               </div>
 
               <h1 className="max-w-[640px] text-[42px] font-semibold leading-[1.03] text-slate-950 sm:text-[58px] lg:text-[72px]">
-                The logistics layer for social commerce.
+                The logistics infrastructure for social commerce.
               </h1>
 
               <p className="mt-6 max-w-[620px] text-[18px] leading-8 text-slate-700 sm:text-[20px]">
