@@ -1,16 +1,75 @@
-@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap");
-
 @import "tailwindcss";
 
+/*
+ * BridgrX design tokens (see BridgrX UI Brand Guideline, "Color" and
+ * "Semantic color usage"). Defined once here under the `--color-brand-*`
+ * namespace so Tailwind v4 generates real utilities (bg-brand-primary,
+ * text-brand-ink, border-brand-line, ...) with working opacity modifiers
+ * (bg-brand-primary/20) -- components should use these instead of raw hex
+ * literals.
+ */
+@theme {
+  --color-brand-bg: #fff8f4;
+  --color-brand-ink: #050505;
+  --color-brand-muted: #625c58;
+  --color-brand-primary: #f4512c;
+  --color-brand-primary-deep: #d63e1b;
+  --color-brand-primary-tint: #ffb19e;
+  --color-brand-cream: #fff2eb;
+  --color-brand-line: #eadbd3;
+  --color-brand-outline: #d9c5ba;
+  --color-brand-rider: #6c3bff;
+  --color-brand-merchant: #39b54a;
+}
+
+@font-face {
+  font-family: "Plus Jakarta Sans";
+  src: url("./assets/brand/fonts/PlusJakartaSans-Regular.ttf") format("truetype");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Plus Jakarta Sans";
+  src: url("./assets/brand/fonts/PlusJakartaSans-Medium.ttf") format("truetype");
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Plus Jakarta Sans";
+  src: url("./assets/brand/fonts/PlusJakartaSans-SemiBold.ttf") format("truetype");
+  font-weight: 600;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Plus Jakarta Sans";
+  src: url("./assets/brand/fonts/PlusJakartaSans-Bold.ttf") format("truetype");
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+
 :root {
-  font-family: "Poppins", sans-serif;
+  font-family: "Plus Jakarta Sans", sans-serif;
   color-scheme: light;
-  --bridgrx-bg: #f7faf8;
-  --bridgrx-ink: #0f172a;
-  --bridgrx-muted: #64748b;
-  --bridgrx-primary: #0f7d5d;
-  --bridgrx-primary-deep: #0b674d;
-  --bridgrx-warm: #f2b84b;
+  /* --bridgrx-* names match the guideline's token table; they alias the
+     --color-brand-* values above so existing references keep working. */
+  --bridgrx-bg: var(--color-brand-bg);
+  --bridgrx-ink: var(--color-brand-ink);
+  --bridgrx-muted: var(--color-brand-muted);
+  --bridgrx-primary: var(--color-brand-primary);
+  --bridgrx-primary-deep: var(--color-brand-primary-deep);
+  --bridgrx-primary-tint: var(--color-brand-primary-tint);
+  --bridgrx-cream: var(--color-brand-cream);
+  --bridgrx-line: var(--color-brand-line);
+  --bridgrx-outline: var(--color-brand-outline);
+  --bridgrx-rider: var(--color-brand-rider);
+  --bridgrx-merchant: var(--color-brand-merchant);
 }
 
 html {
@@ -23,7 +82,7 @@ body {
   min-width: 320px;
   background: var(--bridgrx-bg);
   color: var(--bridgrx-ink);
-  font-family: "Poppins", sans-serif;
+  font-family: "Plus Jakarta Sans", sans-serif;
 }
 
 * {
@@ -41,11 +100,11 @@ h1,
 h2,
 h3,
 h4 {
-  font-family: "Poppins", sans-serif;
+  font-family: "Plus Jakarta Sans", sans-serif;
 }
 
 ::selection {
-  background: rgba(15, 125, 93, 0.18);
+  background: rgba(244, 81, 44, 0.2);
 }
 
 @keyframes marquee-left {

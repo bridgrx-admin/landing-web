@@ -8,7 +8,10 @@ export function Input({
   return (
     <input
       className={classNames(
-        "h-10 w-full rounded-[14px] border border-slate-200 bg-white px-3 text-sm text-slate-900 placeholder:text-slate-400 shadow-[0_1px_0_rgba(15,23,42,0.02)] outline-none transition focus:border-[#0B7BFF] focus:ring-2 focus:ring-[#0B7BFF]/15",
+        // 16px (text-base), not text-sm, so focusing on mobile Safari
+        // doesn't trigger an iOS zoom (guideline, "Component implementation
+        // rules" > Inputs).
+        "h-10 w-full rounded-lg border border-brand-line bg-white px-3 text-base text-brand-ink placeholder:text-brand-muted shadow-[0_1px_0_rgba(15,23,42,0.02)] outline-none transition focus:border-brand-primary focus:ring-2 focus:ring-brand-primary/15",
         className
       )}
       {...props}

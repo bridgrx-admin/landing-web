@@ -12,12 +12,12 @@ type ButtonProps = ButtonHTMLAttributes<HTMLButtonElement> & {
 
 const variantClasses: Record<ButtonVariant, string> = {
   primary:
-    "bg-[#0f7d5d] text-white shadow-[0_8px_18px_rgba(15,125,93,0.22)] hover:bg-[#0b674d] hover:shadow-[0_12px_24px_rgba(15,125,93,0.26)]",
+    "bg-brand-primary text-white shadow-[0_8px_18px_rgba(244,81,44,0.24)] hover:bg-brand-primary-deep hover:shadow-[0_12px_24px_rgba(244,81,44,0.28)]",
   secondary:
-    "bg-white text-slate-800 border border-slate-200 hover:border-slate-300 hover:bg-slate-50",
-  ghost: "bg-transparent text-slate-700 hover:bg-slate-100",
+    "bg-white text-brand-ink border border-brand-line hover:border-brand-primary/40 hover:bg-brand-bg",
+  ghost: "bg-transparent text-brand-muted hover:bg-brand-cream",
   outline:
-    "bg-white text-slate-800 border border-slate-300 hover:border-slate-400 hover:bg-slate-50",
+    "bg-white text-brand-ink border border-brand-outline hover:border-brand-primary/48 hover:bg-brand-bg",
 };
 
 const sizeClasses: Record<ButtonSize, string> = {
@@ -36,7 +36,7 @@ export function Button({
   return (
     <button
       className={classNames(
-        "inline-flex items-center justify-center gap-2 rounded-lg font-medium transition-all duration-200 focus:outline-none focus-visible:ring-2 focus-visible:ring-[#0f7d5d]/35 focus-visible:ring-offset-2 focus-visible:ring-offset-white disabled:cursor-not-allowed disabled:opacity-60",
+        "inline-flex items-center justify-center gap-2 rounded-lg font-medium transition-all duration-200 focus:outline-none focus-visible:ring-2 focus-visible:ring-brand-primary/35 focus-visible:ring-offset-2 focus-visible:ring-offset-white disabled:cursor-not-allowed disabled:opacity-60",
         variantClasses[variant],
         sizeClasses[size],
         className
